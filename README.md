@@ -13,11 +13,13 @@
   - 매주 월요일 진행
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준   
-    - [X] Roman to Integer
+    - [X] [Roman to Integer](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Roman%20to%20Integer.md)
     - [ ] Integer to Roman
   - 유하람
     - [ ] Two Sum
     - [ ] Palindrome Number
     
     
-    
+
+##### 공유 완료된 알고리즘
+##### 의견
