@@ -13,12 +13,11 @@
   - 매주 월요일 진행
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준   
-    - LeetCode
     - [X] Roman to Integer
-    - Integer to Roman
+    - [ ] Integer to Roman
   - 유하람
-    - Two Sum
-    - Palindrome Number
+    - [ ] Two Sum
+    - [ ] Palindrome Number
     
     
     
