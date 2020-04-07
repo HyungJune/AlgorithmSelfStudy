@@ -14,7 +14,7 @@
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준   
     - LeetCode
-    - Roman to Integer
+    - [X] Roman to Integer
     - Integer to Roman
   - 유하람
     - Two Sum
