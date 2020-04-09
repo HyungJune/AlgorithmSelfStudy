@@ -14,7 +14,7 @@
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준   
     - [X] [Roman to Integer](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Roman%20to%20Integer.md)
-    - [ ] Integer to Roman
+    - [ ] [Integer to Roman](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Integer%20to%20Roman.md)
   - 유하람
     - [ ] Two Sum
     - [ ] Palindrome Number
