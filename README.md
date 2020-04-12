@@ -17,7 +17,7 @@
     - [X] [Integer to Roman](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Integer%20to%20Roman.md)
   - 유하람
     - [X] [Two Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Two%20Sum.md)
-    - [ ] Palindrome Number
+    - [X] [Palindrome Number](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Palindrome%20Number.md)
     
     
 
