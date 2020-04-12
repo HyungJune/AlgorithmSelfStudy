@@ -31,6 +31,7 @@ func twoSum(nums []int, target int) []int {
 ## LeetCode 솔루션 참고 내용
 - 해쉬맵을 이용하고, 정수의 보수를 찾는 방식을 사용하면 더 빠르다고 함
 - 해쉬맵에서 검색하는게 for 반복문 한번 돌리는것보다 빠르다고 볼 수 있는 듯
+- 해쉬맵 사용시 런타임이 36ms→4ms로 감소
 ```
 func twoSum(nums []int, target int) []int {
     var idxmap map[int]int
