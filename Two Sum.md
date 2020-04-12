@@ -13,15 +13,14 @@
 
 ```
 func twoSum(nums []int, target int) []int {
-    var ret []int
     for i := 0; i < len(nums); i++ {
         for j := i + 1; j < len(nums); j++ {
             if nums[i] + nums[j] == target {
-                ret = []int{i, j}
+                return []int{i, j}
             }
-        }
+        }    
     }
-    return ret
+    return []int{}
 }
 ```
 - go언어 사용
@@ -32,3 +31,18 @@ func twoSum(nums []int, target int) []int {
 ## LeetCode 솔루션 참고 내용
 - 해쉬맵을 이용하고, 정수의 보수를 찾는 방식을 사용하면 더 빠르다고 함
 - 해쉬맵에서 검색하는게 for 반복문 한번 돌리는것보다 빠르다고 볼 수 있는 듯
+```
+func twoSum(nums []int, target int) []int {
+    var idxmap map[int]int
+    idxmap = make(map[int]int)
+    for i := 0; i < len(nums); i++ {
+        complement := target - nums[i]
+        val, exists := idxmap[complement]
+        if exists {
+            return []int{i, val}
+        }
+        idxmap[nums[i]] = i
+    }
+    return []int{}
+}
+```
