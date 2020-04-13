@@ -13,12 +13,19 @@
 ### 2020년 4월 13일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
-##### 알고리즘 공유
+##### 1. 알고리즘 공유
   - Roman to Integer
   - Integer to Roman
   - Two Sum
   - Palindrome Number
-
+##### 2. 다음 주 공유할 알고리즘 선택
+  - 신형준
+    - ComposeRanges
+    - Regular Expression Matching
+  - 유하람
+    - Vaild Parentheses
+    - Merge Two Sorted Lists
+ 
 ### 2020년 4월 06일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
