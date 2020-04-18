@@ -1,6 +1,6 @@
-### Integer to Roman
+### ComposeRanges
 #### Writer: Hyungjune Shin
-#### Refer: LeetCode
+#### Refer: YouTube (LeetCode)
 * * *
 ### Problem
 중복되지 않은 요소들을 포함한 정렬된 integer 배열에 대해서 해당 배열이 담고 있는 숫자 범위에 대한 요약을 출력하는 알고리즘을 구현하는 문제입니다.   
