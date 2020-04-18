@@ -21,7 +21,7 @@
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준
     - [X] [ComposeRanges](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ComposeRanges.md)
-    - Regular Expression Matching
+    - [ ] [Regular Expression Matching](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Regular%20Expression%20Matching.md)
   - 유하람
     - Vaild Parentheses
     - Merge Two Sorted Lists
