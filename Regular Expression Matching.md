@@ -33,3 +33,32 @@ p = "a*"
 <b>Explanation</b>: '*' means zero or more of the preceding element, 'a'.
 Therefore, by repeating 'a' once, it becomes "aa".
 </pre>
+
+<b>Example 3</b>
+<pre>
+<b>Input</b>:
+s = "ab"
+p = ".*"
+<b>Output</b>: true
+<b>Explanation</b>: ".*" means "zero or more (*) of any character (.)".
+</pre>
+
+<b>Example 4</b>
+<pre>
+<b>Input</b>:
+s = "aab"
+p = "c*a*b"
+<b>Output</b>: true
+<b>Explanation</b>: c can be repeated 0 times, a can be repeated 1 time. Therefore,
+it matches "aab".
+</pre>
+
+<b>Example 5</b>
+<pre>
+<b>Input</b>:
+s = "mississippi"
+p = "mis*is*p*."
+<b>Output</b>: false
+</pre>
+
+
