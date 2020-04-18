@@ -15,3 +15,11 @@
   - ```s```는 비어있을 수 있으며 오직 소문자 형태의 문자(a-z)만을 포함합니다.
   - ```p```는 비어있을 수 있으며 오직 소문자 형태의 문자(a-z)와 ```.```과 ```*```을 포함합니다.
 
+<b>Example 1</b>
+<pre>
+<b>Input</b>:
+s = "aa"
+p = "a"
+<b>Output</b>: false
+<b>Explanation</b>: "a" does not match the entire string "aa".
+</pre>
