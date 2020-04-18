@@ -23,3 +23,13 @@ p = "a"
 <b>Output</b>: false
 <b>Explanation</b>: "a" does not match the entire string "aa".
 </pre>
+
+<b>Example 2</b>
+<pre>
+<b>Input</b>:
+s = "aa"
+p = "a*"
+<b>Output</b>: true
+<b>Explanation</b>: '*' means zero or more of the preceding element, 'a'.
+Therefore, by repeating 'a' once, it becomes "aa".
+</pre>
