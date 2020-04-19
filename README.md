@@ -23,7 +23,7 @@
     - [X] [ComposeRanges](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ComposeRanges.md)
     - [X] [Regular Expression Matching](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Regular%20Expression%20Matching.md)
   - 유하람
-    - Vaild Parentheses
+    - [X] [Vaild Parentheses](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Valid%20Parentheses.md)
     - Merge Two Sorted Lists
  
 ### 2020년 4월 06일
