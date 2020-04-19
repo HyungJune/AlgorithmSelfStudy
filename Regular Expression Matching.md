@@ -60,5 +60,7 @@ s = "mississippi"
 p = "mis*is*p*."
 <b>Output</b>: false
 </pre>
-
+* * *
+### Solution
+- 현재 * 처리를 못하고 있음..ㅠ
 
