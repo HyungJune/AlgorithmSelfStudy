@@ -29,7 +29,7 @@
     - [X] [Regular Expression Matching](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Regular%20Expression%20Matching.md)
   - 유하람
     - [X] [Vaild Parentheses](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Valid%20Parentheses.md)
-    - Merge Two Sorted Lists
+    - [] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
  
 ### 2020년 4월 06일
 #### 참가자: 신형준, 유하람
