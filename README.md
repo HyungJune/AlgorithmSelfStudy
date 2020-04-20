@@ -14,7 +14,18 @@
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
 ##### 1. 알고리즘 공유
-
+  - ComposeRanges
+  - Regular Expression Matching
+  - Vaild Parentheses
+##### 2. 다음주 공유할 알고리즘 선택
+  - 신형준
+    - 알고리즘 책에서 우선적으로 문제를 찾아서 정리
+    - 만약 마땅게 없다면 LeetCode 문제 선택
+  - 유하람
+    - [ ] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
+    - Add Two Numbers
+    - 시간이 된다면 자료구조 하나 정도 잡아서 조사해보기 (Go 기반으로 구현)
+      - 예제 문제가 필요
 ### 2020년 4월 13일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
@@ -29,7 +40,7 @@
     - [X] [Regular Expression Matching](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Regular%20Expression%20Matching.md)
   - 유하람
     - [X] [Vaild Parentheses](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Valid%20Parentheses.md)
-    - [] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
+    - [ ] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
  
 ### 2020년 4월 06일
 #### 참가자: 신형준, 유하람
