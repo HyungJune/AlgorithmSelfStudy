@@ -23,7 +23,7 @@
   - 신형준
     - 알고리즘 책에서 우선적으로 문제를 찾아서 정리
     - 만약 마땅게 없다면 LeetCode 문제 선택
-    - Picnic (
+    - [ ] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md)
   - 유하람
     - [ ] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
     - Add Two Numbers
