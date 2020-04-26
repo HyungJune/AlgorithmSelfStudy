@@ -1,5 +1,9 @@
-####
-####
+#### Add Two Numbers
+#### Writer: Haram Ryu
+#### Refer: LeetCode
+
+## 문제 설명
+음수가 아닌 두개의 정수가 두개의 비어있지 않은 linked list가 주어짐. 각자릿수가 역순으로 linked list로 저장되어있음. 두개의 숫자를 더해서 linked list로 
 
 ## 솔루션
 ```
