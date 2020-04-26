@@ -83,7 +83,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 }
 ```
 - Linked list를 사용하는 문제이고, l1, l2에서 꺼낼 때 일의 자리, 십의 자리, 백의 자리 순서로 나오기 때문에 연산 순서도 일의 자리, 십의 자리, 백의 자리 순서로 하게 된다.
-    - 그래서 head, tail을 기억하고 있는 구조체 List를 새로 선언하고, push() 함수를 선언하여 사용하였다.
+    - 답안도 일의자리->십의자리->백의자리 이렇게 역순인 linked list로 제출하므로, 맨 뒤에 넣으려면 push()가 필요
 - for 반복문은 l1과 l2가 모두 nil이 아닌 동안 반복한다.
     - 가장 기본적인 경우는 l1과 l2가 모두 nil이 아닌 경우
         - 1. 두 linked list의 head를 꺼내서 서로 더하고 거기에 이전 연산의 몫(quotient)까지 더한다. (l1.Val + l2.Val + quotient): 이게 temp에 저장됨
