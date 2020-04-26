@@ -87,9 +87,9 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 - for 반복문은 l1과 l2가 모두 nil이 아닌 동안 반복한다.
     - 가장 기본적인 경우는 l1과 l2가 모두 nil이 아닌 경우
         - 1. 두 linked list의 head를 꺼내서 서로 더하고 거기에 이전 연산의 몫(quotient)까지 더한다. (l1.Val + l2.Val + quotient): 이게 temp에 저장됨
-	- 2. temp를 10으로 나눈 나머지(remainder)를 output에 푸쉬
-	- 3. temp를 10으로 나눴을 때 몫(quotient)은 다음 연산에서 temp를 만들 때 더해서 다음 자리수 연산에 반영
-	- 4. 마지막에 l1과 l2를 한자리씩 앞으로 땡긴다
+        - 2. temp를 10으로 나눈 나머지(remainder)를 output에 푸쉬
+        - 3. temp를 10으로 나눴을 때 몫(quotient)은 다음 연산에서 temp를 만들 때 더해서 다음 자리수 연산에 반영
+        - 4. 마지막에 l1과 l2를 한자리씩 앞으로 땡긴다
     - l1만 nil이 아닌 경우에는 l1의 모든 자리수를 output에 푸쉬하고, l2만 nil이 아닌 경우에도 마찬가지
     - for문이 다 끝난 후에도 즉, l1과 l2의 마지막 자리수 연산이 끝난 경우에도 10이 넘어갔으면 몫이 1이 남아있을 수 있는데, 그 경우에 output에 push하면서 계산 마무리
 - LeetCode 통과 완료
