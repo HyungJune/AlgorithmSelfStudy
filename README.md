@@ -26,8 +26,8 @@
     - [ ] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md)
     - [X] [atoi](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/atoi.md)
   - 유하람
-    - [ ] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
-    - Add Two Numbers
+    - [X] [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
+    - [X] [Add Two Numbers](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Add%20Two%20Numbers.md)
     - 시간이 된다면 자료구조 하나 정도 잡아서 조사해보기 (Go 기반으로 구현)
       - 예제 문제가 필요
 ### 2020년 4월 13일
