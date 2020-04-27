@@ -16,7 +16,16 @@
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
 ##### 1. 알고리즘 공유
+  - atoi
+  - Merge Two Sorted Lists
+  - Add Two Numbers
 ##### 2. 다음 주 공유할 알고리즘 선택
+  - 신형준
+    - [ ] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md) 완성을 목표
+    - 상황보고 LeetCode에서 문제 찾거나 책에서 발취
+  - 유하람
+    - Longest Substring Without Repeating Charaters
+    - 자료구조 중 Tree를 공부하고 예제를 하나 제공
 ##### 3. 일정
 다음주(5월 4일)는 패스 (신형준 제주감), 그 다음 스터디는 11일에 진행
 ### 2020년 4월 20일
