@@ -90,4 +90,7 @@
   - [ComposeRanges](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ComposeRanges.md)
   - [Regular Expression Matching](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Regular%20Expression%20Matching.md)
   - [Vaild Parentheses](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Valid%20Parentheses.md)
+  - [atoi](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/atoi.md)
+  - [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
+  - [Add Two Numbers](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Add%20Two%20Numbers.md)
 ##### 의견
