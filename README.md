@@ -21,7 +21,7 @@
   - Add Two Numbers
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준
-    - [] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md) 완성을 목표
+    - [X] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md) 완성을 목표
     - 상황보고 LeetCode에서 문제 찾거나 책에서 발취
   - 유하람
     - Longest Substring Without Repeating Charaters
