@@ -33,3 +33,113 @@
 4
 ```
 ### Solution
+우선 문제를 입력 받아야 하므로 입력 방식에 대해서 구현을 해야합니다.
+```go
+type Problem struct {
+	numOfStudents int
+	numOfFriends  int
+	relationShip  []int
+}
+```
+우선 저는 Problem이라는 객체를 만들어서 여러가지의 케이스를 받을 수 있도록 구성했습니다.
+```go
+func main() {
+	var numOfQuestionString string
+	fmt.Scanln(&numOfQuestionString)
+	numOfQuestion, _ := strconv.Atoi(numOfQuestionString)
+	questions := []Problem{}
+	for i := 0; i < numOfQuestion; i++ {
+		var numOfStudents int
+		var numOfFriends int
+		scanner := bufio.NewScanner(os.Stdin)
+		if scanner.Scan() {
+			line := scanner.Text()
+			lineSlice := strings.Split(line, " ")
+			numOfStudents, _ = strconv.Atoi(lineSlice[0])
+			numOfFriends, _ = strconv.Atoi(lineSlice[1])
+		}
+
+		p := Problem{}
+		p.numOfFriends = numOfFriends
+		p.numOfStudents = numOfStudents
+
+		var relationShip []int
+		if scanner.Scan() {
+			line := scanner.Text()
+			lineSlice := strings.Split(line, " ")
+			for j := 0; j < len(lineSlice); j++ {
+				n, _ := strconv.Atoi(lineSlice[j])
+				relationShip = append(relationShip, n)
+			}
+		}
+		p.relationShip = relationShip
+		questions = append(questions, p)
+	}
+
+	for i := 0; i < numOfQuestion; i++ {
+		fmt.Println(answer(questions[i]))
+	}
+}
+```
+main 문에서는 questions라는 이름의 Problem 형 슬라이스를 만들어서 문제를 받을 수 있도록 했습니다.
+아래의 answer 함수가 이번 문제의 해답을 알려주는 역할을 합니다.
+
+```go
+func answer(problem Problem) int {
+	var taken [10]bool
+
+	var areFriends [10][10]bool
+
+	for i := 0; i < len(problem.relationShip); i += 2 {
+		areFriends[problem.relationShip[i]][problem.relationShip[i+1]] = true
+	}
+
+	//countPairings
+	return countPairing(taken, problem.numOfStudents, areFriends)
+}
+```
+taken이라는 변수는 짝이 지어진 학생들을 true로 표시하기 위한 변수입니다.
+areFriends 변수는 i와 j 학생이 서로 친구관계인지를 표시해주는 변수입니다.
+문제의 값을 활용하여 두 변수로 재구성했습니다.
+
+
+책에서 제공하는 solution을 go언어로 재구성했을 경우 다음과 같습니다.
+```go
+func countPairing(taken [10]bool, n int, areFriends [10][10]bool) int {
+	firstFree := -1
+	for i := 0; i < n; i++ {
+		if !taken[i] {
+			firstFree = i
+			break
+		}
+	}
+
+	if firstFree == -1 {
+		return 1
+	}
+
+	ret := 0
+
+	for pairWith := firstFree + 1; pairWith < n; pairWith++ {
+		if !taken[pairWith] && areFriends[firstFree][pairWith] {
+			taken[firstFree], taken[pairWith] = true, true
+			ret += countPairing(taken, n, areFriends)
+			taken[firstFree], taken[pairWith] = false, false
+		}
+	}
+	return ret
+}
+```
+중복을 피하기 위해 index가 가장 작은 애를 먼저 짝을 지어주는 방식으로 동작합니다. 
+firstFree 변수는 현재 taken 변수 상태에서 아직 짝이 없는 애들 중 가장 작은 값(학생)을 가집니다.
+firstFree와 짝을 지을 pairWith를 찾습니다. 이때 areFriends 변수를 활용하며, 재귀함수를 통하여 가능한 모든 수를 검색합니다.
+
+---
+해당 풀이로 풀었을 경우 책에서 제공하는 특수한 경우일 때 다른 해답이 나옵니다.
+```
+1
+4 6
+0 1 1 2 2 3 3 0 0 2 1 3
+```
+위의 Case일 경우 예제 출력 값으로는 3이나와야 하는데, 실제 프로그램에서는 2가 나옵니다.
+다른 Case일 경우는 정상 출력이 됩니다.
