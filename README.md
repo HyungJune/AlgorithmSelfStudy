@@ -22,7 +22,7 @@
 ##### 2. 다음 주 공유할 알고리즘 선택
   - 신형준
     - [X] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md) 완성을 목표
-    - 상황보고 LeetCode에서 문제 찾거나 책에서 발취
+    - [ ] [ZigZag Conversion](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ZigZag%20Conversion.md)
   - 유하람
     - Longest Substring Without Repeating Charaters
     - 자료구조 중 Tree를 공부하고 예제를 하나 제공
