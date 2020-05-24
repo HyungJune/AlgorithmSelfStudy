@@ -21,5 +21,53 @@ string convert(string s, int numRows);
 <b>Input</b>: s = "PAYPALISHIRING", numRows = 3
 <b>Output</b>: "PAHNAPLSIIGYIR"
 </pre>
+
+<b>Example 2</b>
+<pre>
+<b>Input</b>: s = "PAYPALISHIRING", numRows = 4
+<b>Output</b>: "PINALSIGYAHRPI"
+<b>Explanation:</b>
+
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+</pre>
 * * *
-Solution
+### Solution
+문제의 설명이 굉장히 부족하지만, 패턴이 표현된 부분을 본다면 글자가 순서대로 행을 따라 갔다가 역순으로 다시 올라오는 패턴으로 zigzag 모양을 띄고 있습니다.
+제가 풀었던 방식은 다음과 같습니다.
+```go
+func convert(s string, numRows int) string {
+	var zigzagMap [][]int
+	zigzagMap = make([][]int, numRows)
+
+	for i := 0; i < len(s); {
+		for j := 0; j < numRows; j++ {
+			if i >= len(s) {
+				break
+			}
+			zigzagMap[j] = append(zigzagMap[j], i)
+			i++
+		}
+		for j := numRows - 2; j > 0; j-- {
+			if i >= len(s) {
+				break
+			}
+			zigzagMap[j] = append(zigzagMap[j], i)
+			i++
+		}
+	}
+	var r string
+	r = ""
+	for i := 0; i < numRows; i++ {
+		for j := 0; j < len(zigzagMap[i]); j++ {
+			r += string(s[zigzagMap[i][j]])
+		}
+	}
+	return r
+    
+}
+```
+- numRows개의 Slice를 통하여 순차적으로 index를 넣습니다. ZigZag 모양이다보니, 순차적으로 index를 넣은 후 역순으로 다시 넣어주어야 합니다.
+- 넣은 index를 기반으로 각 각의 Slice를 그대로 스트링으로 묶습니다.
