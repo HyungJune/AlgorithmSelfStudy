@@ -29,7 +29,7 @@
     - [X] [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md) 완성을 목표
     - [X] [ZigZag Conversion](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Substring%20Without%20Repeating%20Characters.md)
   - 유하람
-    - [X] [Longest Substring Without Repeating Charaters](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Substring%20Without%20Repeating%20Charaters.md)
+    - [X] [Longest Substring Without Repeating Charaters](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Substring%20Without%20Repeating%20Characters.md)
     - 자료구조 중 Tree를 공부하고 예제를 하나 제공
 ##### 3. 일정
 다음주(5월 4일)는 패스 (신형준 제주감), 그 다음 스터디는 11일에 진행
