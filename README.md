@@ -16,7 +16,14 @@
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
 ##### 1. 알고리즘 공유
-
+    - Picnic
+    - ZigZag Conversion
+    - Longest Substring Without Repeating Charaters
+##### 2. 다음 주 공유 내용 선택
+    - 신형준
+      - 좀 고민해서 
+    - 유하람
+      - 자료구조 중 Tree를 공부하고 예제를 하나 제공
 ### 2020년 4월 27일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
@@ -88,7 +95,7 @@
     
     
 
-##### 공유 완료된 알고리즘
+##### 공유 
   - [Roman to Integer](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Roman%20to%20Integer.md)
   - [Integer to Roman](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Integer%20to%20Roman.md)
   - [Two Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Two%20Sum.md)
@@ -99,4 +106,7 @@
   - [atoi](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/atoi.md)
   - [Merge Two Sorted Lists](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Merge%20Two%20Sorted%20Lists.md)
   - [Add Two Numbers](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Add%20Two%20Numbers.md)
+  - [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md)
+  - [ZigZag Conversion](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ZigZag%20Conversion.md)
+  - [Longest Substring Without Repeating Charaters](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Substring%20Without%20Repeating%20Characters.md)
 ##### 의견
