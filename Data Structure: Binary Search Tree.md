@@ -252,3 +252,13 @@ func main() {
 
 }
 ```
+***Output***
+```
+Sorted values: | a: alpha | b: bravo | c: charlie | d: delta | e: echo | 
+Find node 'd': Found d: 'delta'
+After deleting 'd': a: alpha | b: bravo | c: charlie | e: echo | 
+Single-node tree
+After insert:
+a: alpha | 
+After delete:
+```
