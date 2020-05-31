@@ -23,7 +23,7 @@
     - 신형준
       - 좀 고민해서 
     - 유하람
-      - 자료구조 중 Tree를 공부하고 예제를 하나 제공
+      - [X] [Data Structure: Binary Search Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Data%20Structure:%20Binary%20Search%20Tree.md)
 ### 2020년 4월 27일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
