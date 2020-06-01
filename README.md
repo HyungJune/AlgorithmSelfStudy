@@ -16,8 +16,12 @@
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
 ##### 1. 알고리즘 공유
+  - Container-with-most-water
+  - Longest-Common-Prefix
+  - Data Structure: Binary Search Tree
 ##### 2. 다음주 공유 내용 선택
-
+   - 신형준
+   - 유하람
 ### 2020년 5월 25일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
@@ -118,4 +122,7 @@
   - [Picnic](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/APSS/Picnic.md)
   - [ZigZag Conversion](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/ZigZag%20Conversion.md)
   - [Longest Substring Without Repeating Charaters](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Substring%20Without%20Repeating%20Characters.md)
+  - [Container-with-most-water](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Container%20with%20most%20water.md)
+  - [Longest-Common-Prefix](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Common%20Prefix.md)
+  - [Data Structure: Binary Search Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Data%20Structure:%20Binary%20Search%20Tree.md)
 ##### 의견
