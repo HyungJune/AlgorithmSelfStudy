@@ -22,8 +22,8 @@
 ##### 2. 다음주 공유 내용 선택
    - 신형준
    - 유하람
-     - [X] [Maximum Subarray] (https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
-     - [X] [Climbing Stairs] (https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
+     - [X] [Maximum Subarray](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
+     - [X] [Climbing Stairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
 ### 2020년 5월 25일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
