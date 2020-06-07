@@ -22,7 +22,7 @@ A solution set is:
 * * *
 ### Solution
 #### Brute-Force 방식
-```
+```go
 func threeSum(nums []int) [][]int {
   result := [][]int{}
 
