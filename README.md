@@ -21,7 +21,7 @@
   - Data Structure: Binary Search Tree
 ##### 2. 다음주 공유 내용 선택
    - 신형준
-     - [ ] [3Sum]
+     - [ ] [3Sum] (https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md)
    - 유하람
      - [X] [Maximum Subarray-divide and conquer로](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
      - [X] [Climbing Stairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
