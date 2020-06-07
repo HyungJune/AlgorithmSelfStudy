@@ -26,16 +26,16 @@ A solution set is:
 func threeSum(nums []int) [][]int {
   result := [][]int{}
 
-	checkDuplicate := func(r []int, s []int) bool {
-		sort.Sort(sort.IntSlice(r))
-		sort.Sort(sort.IntSlice(s))
-		for i := 0; i < len(r); i++ {
-			if r[i] != s[i] {
-				return false
-			}
-		}
-		return true
-	}
+  checkDuplicate := func(r []int, s []int) bool {
+    sort.Sort(sort.IntSlice(r))
+    sort.Sort(sort.IntSlice(s))
+    for i := 0; i < len(r); i++ {
+      if r[i] != s[i] {
+        return false
+      }
+    }
+    return true
+  }
     for i:=0;i<len(nums);i++ {
         for j:=i+1;j<len(nums);j++{
             for k:=j+1;k<len(nums);k++{
