@@ -22,7 +22,7 @@
 ##### 2. 다음주 공유 내용 선택
    - 신형준
    - 유하람
-     - [X] [Maximum Subarray](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
+     - [X] [Maximum Subarray-divide and conquer로](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
      - [X] [Climbing Stairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
      - [X] [Symmetric Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Symmetric%20Tree.md)
 ### 2020년 5월 25일
