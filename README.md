@@ -16,6 +16,9 @@
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
 ##### 1. 알고리즘 공유
+   - Maximum Subarray-divide and conquer
+   - Climbing Stairs
+   - Symmetric Tree
 ##### 2. 다음 주 공유 내용
 ### 2020년 6월 1일
 #### 참가자: 신형준, 유하람
@@ -134,4 +137,7 @@
   - [Container-with-most-water](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Container%20with%20most%20water.md)
   - [Longest-Common-Prefix](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Longest%20Common%20Prefix.md)
   - [Data Structure: Binary Search Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Data%20Structure:%20Binary%20Search%20Tree.md)
+  - [Maximum Subarray-divide and conquer로](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
+  - [Climbing Stairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
+  - [Symmetric Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Symmetric%20Tree.md)
 ##### 의견
