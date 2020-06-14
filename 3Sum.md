@@ -70,6 +70,84 @@ func threeSum(nums []int) [][]int {
 - Time Limit Exceeded가 발생하는 해결법입니다.
 
 #### Two Point 방식
-- 현재 구현 중, 중복된 Case에 대한 처리가 복잡..
+```go
+func threeSum(nums []int) [][]int {
+if len(nums) < 3 {
+		return nil
+	}
+	result := [][]int{}
 
+	sort.Sort(sort.IntSlice(nums))
+
+	var i int = 0
+	for {
+		if i >= len(nums)-2 {
+			break
+		}
+		var lo int = i + 1
+		var hi int = len(nums) - 1
+		for {
+			if lo >= hi {
+				break
+			}
+			sum := nums[i] + nums[lo] + nums[hi]
+			if sum == 0 {
+				local := []int{}
+				local = append(local, nums[i])
+				local = append(local, nums[lo])
+				local = append(local, nums[hi])
+				result = append(result, local)
+				//increase lo
+				for {
+					if lo <= len(nums)-2 && nums[lo] == nums[lo+1] {
+						lo++
+					} else {
+						lo++
+						break
+					}
+				}
+				//decrease hi
+				for {
+					if hi-1 >= 0 && nums[hi] == nums[hi-1] {
+						hi--
+					} else {
+						hi--
+						break
+					}
+				}
+			} else if sum < 0 {
+				//increase lo
+				for {
+					if lo <= len(nums)-2 && nums[lo] == nums[lo+1] {
+						lo++
+					} else {
+						lo++
+						break
+					}
+				}
+			} else if sum > 0 {
+				//decrease hi
+				for {
+					if hi-1 >= 0 && nums[hi] == nums[hi-1] {
+						hi--
+					} else {
+						hi--
+						break
+					}
+				}
+			}
+		}
+		//increase i
+		for {
+			if i <= len(nums)-2 && nums[i] == nums[i+1] {
+				i++
+			} else {
+				i++
+				break
+			}
+		}
+	}
+	return result
+}
+```
 #### Hash Set 
