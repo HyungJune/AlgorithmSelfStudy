@@ -21,7 +21,7 @@
    - Symmetric Tree
 ##### 2. 다음 주 공유 내용
    - 신형준
-      - 3Sum
+      - [X] [3Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md) 
       - 시간되면 추가로 
    - 유하람
       - APSS에서 예제 푼 내용을 LeetCode에서 활용할 수 있는 부분을 찾아볼 예정
