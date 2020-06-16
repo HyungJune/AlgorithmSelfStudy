@@ -22,7 +22,7 @@
 ##### 2. 다음 주 공유 내용
    - 신형준
       - [X] [3Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md) 
-      - 시간되면 추가로 
+      - [X] [Best Time to Buy and Sell Stock](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Best%20Time%20to%20Buy%20and%20Sell%20Stock.md)
    - 유하람
       - [X] [Maximum Depth of Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Depth%20of%20Binary%20Tree.md)
 ### 2020년 6월 1일
