@@ -24,7 +24,7 @@
       - [X] [3Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md) 
       - 시간되면 추가로 
    - 유하람
-      - APSS에서 예제 푼 내용을 LeetCode에서 활용할 수 있는 부분을 찾아볼 예정
+      - [X] [Maximum Depth of Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Depth%20of%20Binary%20Tree.md)
 ### 2020년 6월 1일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
