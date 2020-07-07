@@ -16,19 +16,22 @@
 - 위의 경우는 depth 3
 
 ## 솔루션
-- 다음 노드로 넘어갔을 때의 액션을 함수로 정의하고, 재귀함수를 돌린다. 다음 노드로 넘어갔을 때 케이스는 다음 세가지
-    - 1) node.Left != nil인 경우
-    - 2) node.Right != nil인 경우
-    - 3) 그 외(node.Left == nil && node.Right == nil)인 경우
+- 다음 노드로 넘어갔을 때의 액션을 함수로 정의하고, 재귀함수를 돌린다. 다음 노드로 넘어갔을 때 케이스는 다음  네가지
+    - 1) node.Left, node.Right 모두 nil인 경우
+    - 2) node.Left == nil인 경우
+    - 3) node.Right == nil인 경우
+    - 4) 그 외, node.Left, node.Right 둘 다 nil이 아닌 경우
 - 이 경우를 의미하는 함수가 nextNode
 ```
 func nextNode(node *TreeNode, depth int) int {
-    if node.Left != nil {
-        return nextNode(node.Left, depth + 1)
-    } else if node.Right != nil {
+    if node.Left == nil && node.Right == nil {
+        return depth
+    } else if node.Left == nil {
         return nextNode(node.Right, depth + 1)
+    } else if node.Right == nil {
+        return nextNode(node.Left, depth + 1)
     } else {
-        return depth + 1
+        return max(nextNode(node.Left, depth+1), nextNode(node.Right, depth+1))
     }
 }
 ```
@@ -69,24 +72,28 @@ func maxDepth(root *TreeNode) int {
 	var prevDepth int = 1
 	if root == nil {
 		return 0
-	} else if root.Left == nil && root.Right == nil {
+	} 
+    if root.Left == nil && root.Right == nil {
 		return 1
 	} else if root.Left == nil {
-		return nextNode(root.Right, prevDepth)
+		return nextNode(root.Right, prevDepth+1)
 	} else if root.Right == nil {
-		return nextNode(root.Left, prevDepth)
+		return nextNode(root.Left, prevDepth+1)
 	}
-	return max(nextNode(root.Left, prevDepth), nextNode(root.Right, prevDepth))
+    
+	return max(nextNode(root.Left, prevDepth+1), nextNode(root.Right, prevDepth+1))
 }
 
 
 func nextNode(node *TreeNode, depth int) int {
-    if node.Left != nil {
-        return nextNode(node.Left, depth + 1)
-    } else if node.Right != nil {
+    if node.Left == nil && node.Right == nil {
+        return depth
+    } else if node.Left == nil {
         return nextNode(node.Right, depth + 1)
+    } else if node.Right == nil {
+        return nextNode(node.Left, depth + 1)
     } else {
-        return depth + 1
+        return max(nextNode(node.Left, depth+1), nextNode(node.Right, depth+1))
     }
 }
 
