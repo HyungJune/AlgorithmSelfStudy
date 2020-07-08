@@ -12,6 +12,16 @@
   - APSS (Algorithmic Problem Solving Strategies)
     - 프로그래밍 대회에서 배우는 알고리즘 문제해결 전략이라는 책으로 부터 참고한 자료
 ## 회의 내역
+### 2020년 7월 8일
+#### 참가자: 신형준, 유하람
+#### 미팅 내용
+##### 1. 알고리즘 공유
+   - 3Sum
+   - Best Time to Buy and Sell Stock
+   - Maximum Depth of Binary Tree
+##### 2. 다음 주 공유 내용
+   - 신형준
+   - 유하람
 ### 2020년 6월 10일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
