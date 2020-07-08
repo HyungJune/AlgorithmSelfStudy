@@ -155,4 +155,7 @@
   - [Maximum Subarray-divide and conquer로](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Subarray.md)
   - [Climbing Stairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Climbing%20Stairs.md)
   - [Symmetric Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Symmetric%20Tree.md)
+  - [3Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md) 
+  - [Best Time to Buy and Sell Stock](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Best%20Time%20to%20Buy%20and%20Sell%20Stock.md)
+  - [Maximum Depth of Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Depth%20of%20Binary%20Tree.md)
 ##### 의견
