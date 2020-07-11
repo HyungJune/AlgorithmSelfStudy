@@ -21,7 +21,7 @@
    - Maximum Depth of Binary Tree
 ##### 2. 다음 주 공유 내용
    - 신형준
-     - Binary Tree Maximum Path Sum
+     - [X] [Binary Tree Maximum Path Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Binary%20Tree%20Maximum%20Path%20Sum.md)
    - 유하람
      - Remove Nth Node From End of List
    - 조동규
