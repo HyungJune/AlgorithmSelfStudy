@@ -24,7 +24,7 @@
      - [X] [Binary Tree Maximum Path Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Binary%20Tree%20Maximum%20Path%20Sum.md)
      - [X] [Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Check%20If%20a%20String%20Is%20a%20Valid%20Sequence%20from%20Root%20to%20Leaves%20Path%20in%20a%20Binary%20Tree.md)
    - 유하람
-     - Remove Nth Node From End of List
+     - [X] [Remove Nth Node From End of List](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Remove%20Nth%20Node%20From%20End%20of%20List.md)
    - 조동규
 ### 2020년 6월 10일
 #### 참가자: 신형준, 유하람
