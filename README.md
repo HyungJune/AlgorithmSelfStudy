@@ -15,7 +15,16 @@
 ### 2020년 7월 14일
 #### 참가자: 신형준, 유하람, 조동규
 ##### 1. 알고리즘 공유
+   - Binary Tree Maximum Path Sum
+   - Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree
+   - Remove Nth Node From End of List
+   - Single Number
+   - Number of Good Pairs
+   - Running Sum of 1d Array
 ##### 2. 다음 주 공유 내용
+   - 신형준
+   - 유하람
+   - 
 ### 2020년 7월 8일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
