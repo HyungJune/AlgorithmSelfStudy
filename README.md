@@ -24,7 +24,7 @@
 ##### 2. 다음 주 공유 내용
    - 신형준
    - 유하람
-   - 
+   - 조동규
 ### 2020년 7월 8일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
@@ -178,4 +178,10 @@
   20. [3Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/3Sum.md) 
   21. [Best Time to Buy and Sell Stock](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Best%20Time%20to%20Buy%20and%20Sell%20Stock.md)
   22. [Maximum Depth of Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Maximum%20Depth%20of%20Binary%20Tree.md)
+  23. [Binary Tree Maximum Path Sum](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Binary%20Tree%20Maximum%20Path%20Sum.md)
+  24. [Check If a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Check%20If%20a%20String%20Is%20a%20Valid%20Sequence%20from%20Root%20to%20Leaves%20Path%20in%20a%20Binary%20Tree.md)
+  25. [Remove Nth Node From End of List](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Remove%20Nth%20Node%20From%20End%20of%20List.md)
+  26. [Single Number](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Single%20Number.md)
+  27. [Number of Good Pairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Number%20of%20Good%20Pairs.md)
+  28. [Running Sum of 1d Array](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Running%20Sum%20of%201d%20Array.md)
 ##### 의견
