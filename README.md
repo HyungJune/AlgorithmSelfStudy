@@ -27,6 +27,8 @@
      - [X] [Remove Nth Node From End of List](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Remove%20Nth%20Node%20From%20End%20of%20List.md)
      - [X] [Single Number](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Single%20Number.md)
    - 조동규
+     - [X] [Number of Good Pairs](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Number%20of%20Good%20Pairs.md)
+     - [X] [Running Sum of 1d Array](https://github.com/HyungJune/AlgorithmSelfStudy/blob/master/Running%20Sum%20of%201d%20Array.md)
 ### 2020년 6월 10일
 #### 참가자: 신형준, 유하람
 #### 미팅 내용
