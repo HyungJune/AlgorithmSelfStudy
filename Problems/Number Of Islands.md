@@ -30,7 +30,7 @@ grid의 모든 모서리는 물로 이루어졌다고 가정합니다.
 </pre>
 * * *
 ### Solution
-#### 내가 생각해본 방식
+#### 내가 생각해본 방식 (DFS 방식인듯)
 ```go
 func numIslands(grid [][]byte) int {
 	i := 0
@@ -80,3 +80,8 @@ func findNotChecked(grid [][]byte) (int, int) {
 - 4가지 방향에 대해서 타일을 'A'로 확인이 다 되었다면 1을 리턴합니다.
 - findNotChecked 함수를 통해 타일 중 'A'가 아직 표시안된 부위를 찾아내고, 해당 부위를 기점으로 다시 isLands 함수를 돌립니다.
 - 모든 grid가 'A'로 표기가 되면 결과 값을 리턴하고 종료합니다.
+
+#### 3가지 Solution 존재
+#### DFS
+#### BFS
+#### Union Find
