@@ -61,7 +61,7 @@ func isLands(grid [][]byte, i int, j int) int {
 		return 0
 	}
 	return 1
-}
+}을 
 
 func findNotChecked(grid [][]byte) (int, int) {
 	for i, gridI := range grid {
@@ -80,6 +80,7 @@ func findNotChecked(grid [][]byte) (int, int) {
 - 4가지 방향에 대해서 타일을 'A'로 확인이 다 되었다면 1을 리턴합니다.
 - findNotChecked 함수를 통해 타일 중 'A'가 아직 표시안된 부위를 찾아내고, 해당 부위를 기점으로 다시 isLands 함수를 돌립니다.
 - 모든 grid가 'A'로 표기가 되면 결과 값을 리턴하고 종료합니다.
+- 최적화가 덜된 부분들이 존재, Discussion을 참고해보니 'A'로 표기하지 않고 '0'으로 표기했으면 좀 더 간단하게 구성이 되었을 것..
 
 #### 3가지 Solution 존재
 #### DFS
