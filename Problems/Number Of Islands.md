@@ -122,4 +122,57 @@ func dfs(grid [][]byte, r int, c int){
 - 앞의 방식과 같습니다.
 - 다만 '0'으로 지정함으로써 함수의 길이도 줄어들었으며 좀 더 효율적으로 구성되어져 있습니다.
 #### BFS
+```go
+func numIslands(grid [][]byte) int {
+    if grid == nil || len(grid) == 0 {
+        return 0
+    }   
+    
+    nr := len(grid)
+    nc := len(grid[0])
+    result := 0
+    for r := 0;r<nr;r++{
+        for c:=0;c<nc;c++{
+            if grid[r][c] == '1' {
+                result++
+                grid[r][c] = '0'
+                var neighbors []int
+                neighbors = append(neighbors, r*nc+c)
+                for len(neighbors) != 0 {
+                    id := remove(&neighbors)
+                    row := id / nc
+                    col := id % nc
+                    if row-1 >= 0 && grid[row-1][col] == '1' {
+                        neighbors = append(neighbors, (row-1) * nc + col)
+                        grid[row-1][col] = '0'
+                    }
+                    if (row+1) < nr && grid[row+1][col] == '1' {
+                        neighbors = append(neighbors, (row+1) * nc + col)
+                        grid[row+1][col] = '0'
+                    }
+                    if (col-1) >= 0 && grid[row][col-1] == '1' {
+                        neighbors = append(neighbors, row * nc + (col-1))
+                        grid[row][col-1] = '0'
+                    }
+                    if (col+1) < nc && grid[row][col+1] == '1' {
+                        neighbors = append(neighbors, row * nc + (col+1))
+                        grid[row][col+1] = '0'
+                    }
+                }
+                }
+            }
+        }
+    
+    return result
+}
+
+func remove(s *[]int) int {
+	val := (*s)[0]
+	*s = (*s)[1:len(*s)]
+	return val
+}
+```
+- 일반적으로 Queue를 사용하는데, Slice로 이를 대체했습니다. (Go에서는 따로 Queue 자료구조를 제공하지는 않습니다.)
+- Remove 함수에서는 Queue에서 Pop 함수와 같은 결과를 만들어주고 있습니다.
+- BFS에서는 인접한 노드들의 정보를 Queue에 저장하고, Queue에 저장된 순서대로 검사를 진행합니다. (인접한 노드들을 먼저 탐색)
 #### Union Find
