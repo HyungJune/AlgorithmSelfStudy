@@ -84,5 +84,42 @@ func findNotChecked(grid [][]byte) (int, int) {
 
 #### 3가지 Solution 존재
 #### DFS
+```go
+func numIslands(grid [][]byte) int {
+    if grid == nil || len(grid) == 0 {
+        return 0
+    }   
+    
+    nr := len(grid)
+    nc := len(grid[0])
+    result := 0
+    for r := 0;r<nr;r++ {
+        for c:=0;c<nc;c++{
+            if grid[r][c] == '1' {
+                result++
+                dfs(grid,r,c)
+            }
+        }
+    }
+    return result
+}
+
+func dfs(grid [][]byte, r int, c int){
+    nr := len(grid)
+    nc := len(grid[0])
+    
+    if r < 0 || c < 0 || r >= nr || c >= nc || grid[r][c] == '0' {
+        return
+    }
+    
+    grid[r][c] = '0'
+    dfs(grid, r-1, c)
+    dfs(grid, r+1, c)
+    dfs(grid, r, c-1)
+    dfs(grid, r, c +1)
+}
+```
+- 앞의 방식과 같습니다.
+- 다만 '0'으로 지정함으로써 함수의 길이도 줄어들었으며 좀 더 효율적으로 구성되어져 있습니다.
 #### BFS
 #### Union Find
