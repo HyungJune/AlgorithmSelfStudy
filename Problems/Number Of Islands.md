@@ -176,3 +176,105 @@ func remove(s *[]int) int {
 - Remove 함수에서는 Queue에서 Pop 함수와 같은 결과를 만들어주고 있습니다.
 - BFS에서는 인접한 노드들의 정보를 Queue에 저장하고, Queue에 저장된 순서대로 검사를 진행합니다. (인접한 노드들을 먼저 탐색)
 #### Union Find
+```go
+type Union struct {
+    count int
+    parent []int
+    rank []int
+}
+
+func newUnion(grid [][]byte) *Union {
+    union := new(Union)
+    union.count = 0
+    m := len(grid)
+    n := len(grid[0])
+    union.parent = make([]int, m*n)
+    union.rank = make([]int, m*n)
+    for i:=0;i<m;i++{
+        for j:=0;j<n;j++{
+            if grid[i][j] == '1' {
+                union.parent[i*n+j] = i*n+j
+                union.count++
+            }
+            union.rank[i*n + j] = 0
+        }
+    }
+    
+    return union
+}
+
+func (union *Union) find(i int) int {
+    if union.parent[i] != i {
+        union.parent[i] = union.find(union.parent[i])
+    }
+    return union.parent[i]
+}
+
+func (union *Union) union(x int, y int) {
+    rootx := union.find(x)
+    rooty := union.find(y)
+    if rootx != rooty {
+        if union.rank[rootx] > union.rank[rooty] {
+            union.parent[rooty] = rootx
+        } else if union.rank[rootx] < union.rank[rooty] {
+            union.parent[rootx] = rooty
+        } else {
+            union.parent[rooty] = rootx
+            union.rank[rootx] += 1
+        }
+        union.count--
+    }
+}
+
+func (union Union) getCount() int {
+    return union.count
+}
+
+
+//Union Find
+func numIslands(grid [][]byte) int {
+    if grid == nil || len(grid) == 0 {
+        return 0
+    }
+    
+    nr := len(grid)
+    nc := len(grid[0])
+    uf := newUnion(grid)
+    for r:=0;r<nr;r++{
+        for c:=0;c<nc;c++ {
+            if grid[r][c] == '1' {
+                grid[r][c] = '0'
+                if r-1>=0 && grid[r-1][c] == '1' {
+                    uf.union(r*nc+c, (r-1) * nc + c)
+                }
+                if r+1<nr && grid[r+1][c] == '1' {
+                    uf.union(r*nc+c, (r+1) *nc + c)
+                }
+                if c-1 >=0 && grid[r][c-1] == '1' {
+                    uf.union(r*nc+c, r*nc+c-1)
+                }
+                if c+1 < nc && grid[r][c+1] == '1' {
+                    uf.union(r*nc+c, r*nc+c+1)
+                }
+            }
+        }
+    }
+    return uf.getCount()
+}
+```
+- 처음에는 모든 '1'에 대해서 Disjoint Set을 구성하고, Union으로 묶는 과정을 통해서 최종적으로 남은 Union들의 갯수를 return하므로써 문제가 풀립니다.
+- newUnion 함수에서는 최초의 Disjoint Set을 구성하는데, 이때 grid에 존재하는 모든 '1' 각 각이 Disjoint Set으로써 구별됩니다. 그러므로 이때 count의 갯수는 '1'의 갯수와 동일합니다. 각 각의 Disjoint Set (하나의 노드로만 구성됨)들은 본인이 부모노드 이므로 노드 x에 대해서 parent[x] = x 입니다.
+- find 함수는 구성된 union에서 부모 노드를 찾는 과정을 그려주고 있습니다. 두 노드가 union일때 하나의 노드는 다른 노드를 부모로써 바라보게 됩니다. 예를 들면, x, y가 있을 때 y의 parent가 x라면 parent[y] = x가 나오고, x가 최상위 부모노드라면 parent[x] = x로 구성됩니다. 
+- union함수는 두 노드(x, y)를 하나의 union으로 묶어줍니다. 이때, find 함수를 통해서 부모 노드를 찾고, 두 부모노드 사이의 rank 값을 통해서 묶었을 때 누가 부모노드가 될 것인지를 결정하게 됩니다. 솔직히 이 문제에서는 두 노드 중 누가 부모가 되든 상관이 없어 다음과 같이 union 함수를 구성해도 문제를 풀 수 있습니다. 두 Disjoint Set이 join이 되었으므로, count의 값은 감소하게 됩니다.
+```go
+func (union *Union) union(x int, y int) {
+    rootx := union.find(x)
+    rooty := union.find(y)
+    if rootx != rooty {
+        union.parent[rooty] = rootx
+        union.rank[rootx] += 1
+        union.count--
+    }
+}
+```
+- 이와 같은 Union으로 묶는 기능을 통해서 인접 노드가 '1'일 경우에 union을 구성합니다. 조금이라도 최적하를 위해 검사된 노드는 '0'으로 표기하는게 좋아보입니다. (grid[r][c] = '0') 부분을 지워도 정상적으로 문제가 풀립니다.
