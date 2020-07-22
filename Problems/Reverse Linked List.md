@@ -14,16 +14,21 @@ Output: 5->4->3->2->1->nil
 ```
 func reverseList(head *ListNode) *ListNode {
     curr := head
-    var prev *ListNode
+    var rev *ListNode
     for curr != nil {
         nextTemp := curr.Next
-        curr.Next = prev
-        prev = curr
+        curr.Next = rev
+        rev = curr
         curr = nextTemp
     }
-    return prev
+    return rev
 }
 ```
+- 변수는 세개를 사용
+    - curr: 처음에는 입력값을 받고, 앞에거부터 하나씩 떼어주는 포인터
+    - nextTemp: 입력값에서 하나씩 떼어진 나머지를 임시 보관
+    - rev: 거꾸로 바뀌게 될 결과값을 저장
+- 과정은 그림으로 설명
 ## 솔루션2-recursive
 ```
 func reverseList(head *ListNode) *ListNode {
@@ -36,3 +41,7 @@ func reverseList(head *ListNode) *ListNode {
     return ret
 }
 ```
+- 재귀적으로 풀 때는 가장 마지막 노드를 찾아 들어가서 이전 노드를 바라보게 하고, 가장 마지막 노드의 포인터를 반환한다
+- 과정은 그림으로 설명
+## 종합
+- 이 아이디어를 어떻게 생각해내야하는지..
