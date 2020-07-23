@@ -33,6 +33,200 @@ Given the root of a binary search tree with distinct values, modify it so that e
  * }
  */
 ```
+```go
+package main
+
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
+}
+
+type stack struct {
+	arr   []*TreeNode
+	count int
+}
+
+func (s *stack) Push(node *TreeNode) {
+	s.arr = append(s.arr[:s.count], node)
+	s.count++
+}
+
+func (s *stack) Pop() *TreeNode {
+	if s.count == 0 {
+		return nil
+	}
+	s.count--
+	return s.arr[s.count]
+}
+
+func (s *stack) isEmpty() bool {
+	if s.count == 0 {
+		return true
+	}
+	return false
+}
+
+func main() {
+}
+func bstToGst(root *TreeNode) *TreeNode {
+
+	return root
+}
+
+func search(root *TreeNode, s *stack) *TreeNode {
+	var node *TreeNode
+	if root == nil {
+		return root
+	}
+
+	node = root.Right
+
+	for {
+		// if node == nil {
+		// 	return s.Pop()
+		// }
+
+		if node.Right != nil {
+			s.Push(node)
+			search(node.Right, s)
+		} else {
+			return s.Pop()
+		}
+
+		node.Val += node.Right.Val
+
+		if node.Left != nil {
+
+		}
+	}
+
+	return root
+}
+
+func search2(root *TreeNode, s *stack) *TreeNode {
+	if root.Right != nil {
+		s.Push(root)
+		search2(root.Right, s)
+	}
+	triangle(root)
+	if root.Left != nil {
+		s.Push(root)
+		search2(root.Left, s)
+	}
+
+	var tmp *TreeNode
+	tmp = s.Pop()
+	if tmp.Left == root {
+		root.Val += tmp.Val
+	}
+	return s.Pop()
+}
+
+func triangle(node *TreeNode) {
+	if node.Right != nil {
+		node.Val += node.Right.Val
+	}
+	// if node.Left != nil {
+	// 	node.Left.Val = node.Val + node.Left.Val
+	// }
+}
+
+/*
+func genBSTArr(root *TreeNode) []int {
+	var bstArr []int
+	var depthQueue *queue
+	bstArr = make([]int, 0)
+	depthQueue = &queue{}
+	depthQueue.initialize(0)
+
+	var tmp *TreeNode
+	index := 0
+	depth := 1
+
+	depthQueue.Push(root)
+
+	for {
+		for i := 0; i < 2^depth;
+		tmp = depthQueue.Pop().(*TreeNode)
+		if tmp == nil {
+
+		} else {
+			bstArr[index] = tmp.Val
+			index++
+
+			if tmp.Left != nil {
+				depthQueue.Push(tmp.Left)
+			} else {
+				depthQueue.Push(nil)
+			}
+			if tmp.Right != nil {
+				depthQueue.Push(tmp.Right)
+			} else {
+				depthQueue.Push(nil)
+			}
+		}
+		depth++
+	}
+
+	return bstArr
+}
+*/
+
+type queue struct {
+	front int
+	rear  int
+	size  int
+	arr   []interface{}
+}
+
+func (q *queue) doublingSlice() {
+	var doubledSlice []interface{}
+	doubledSlice = make([]interface{}, len(q.arr), cap(q.arr)*2)
+	copy(doubledSlice, q.arr)
+	q.arr = doubledSlice
+	q.size = cap(q.arr)
+}
+
+func (q *queue) initialize(args interface{}) {
+	const DEFAULT_SIZE = 10
+
+	switch args.(type) {
+	case int:
+		if args.(int) == 0 {
+			q.size = DEFAULT_SIZE
+		} else {
+			q.size = args.(int)
+		}
+	default:
+		q.size = DEFAULT_SIZE
+	}
+	q.arr = make([]interface{}, q.size, q.size)
+	q.front = 0
+	q.rear = 1
+}
+
+func (q *queue) Push(elem interface{}) {
+	if len(q.arr) == cap(q.arr) {
+		q.doublingSlice()
+	}
+	q.arr[q.rear-1] = elem
+	q.rear = (q.rear + 1) % q.size
+}
+
+func (q *queue) Pop() (elem interface{}) {
+	elem = q.arr[q.front]
+	q.front = (q.front + 1) % q.size
+	return elem
+}
+
+func (q *queue) isEmpty() bool {
+	if q.front == q.rear {
+		return true
+	}
+	return false
+}
+```
 
 ### 접근법
 
