@@ -8,7 +8,7 @@ Given the root of a binary search tree with distinct values, modify it so that e
 
 <b>Example 1</b>
 <pre>
-<img src="./images/leetcode_binary_search_tree_to_greater_sum_tree_1.png" alt="drawing" width="300" />
+<img src="./images/leetcode_binary_search_tree_to_greater_sum_tree_1.PNG" alt="drawing" width="300" />
 <b>Input</b>: [4,1,6,0,2,5,7,null,null,null,3,null,null,null,8]
 <b>Output</b>: [30,36,21,36,35,26,15,null,null,null,33,null,null,null,8]
 </pre>
