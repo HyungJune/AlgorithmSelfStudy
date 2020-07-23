@@ -3,7 +3,7 @@
 #### Refer: LeetCode
 
 ## 문제 설명
-Singly linked list가 주어지는데 순서를 거꾸로 바꾸어서 출력한다
+Singly linked list가 주어지는데 순서를 거꾸로 바꾸어서 출력한다  
 ***예시***
 ```
 Input: 1->2->3->4->5->nil
