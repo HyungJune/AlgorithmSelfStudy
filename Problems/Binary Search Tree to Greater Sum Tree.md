@@ -143,3 +143,4 @@ func (s *Stack) Pop() *TreeNode {
 4. BSTree 노드들의 value를 Factorial 방식으로 변경
   - 변경과 동시에 저장하고 있던 TreeNode 포인터를 통해 TreeNode의 Value의 값도 변경
 5. 결과값 출력
+```
