@@ -130,15 +130,16 @@ func (s *Stack) Pop() *TreeNode {
 ```
 
 ### 접근법
+```
 1. 각 Tree노드의 Val 값과 그 노드의 주소를 저장하는 BSTreeNode 정의 
-2.Tree의 값을 모두 탐색
-  1. BFS 방식으로 탐색
-  2. 탐색을 하며 현재 Tree의 값을 통해 BSTree를 구성
-  3. BSTree는 배열로 구현
+  - Tree의 값을 모두 탐색
+2. BFS 방식으로 탐색
+  - 탐색을 하며 현재 Tree의 값을 통해 BSTree를 구성
+  - BSTree는 배열로 구현
 3. BSTree의 노드들을 Sorting
-  1. BSTree에는 모든 TreeNode의 정보가 저장되어있는 상태.
-  2. 각 BSTreeNode의 값을 기준으로 오름차순으로 Sorting
-  3. QuickSort 구현을 직접 해봄. 굳이 quicksort를 사용하지 않고 golang 기본 library를 사용해도 동일함(내부적으로 quicksort가 구현되어있음)
+  - BSTree에는 모든 TreeNode의 정보가 저장되어있는 상태.
+  - 각 BSTreeNode의 값을 기준으로 오름차순으로 Sorting
+  - QuickSort 구현을 직접 해봄. 굳이 quicksort를 사용하지 않고 golang 기본 library를 사용해도 동일함(내부적으로 quicksort가 구현되어있음)
 4. BSTree 노드들의 value를 Factorial 방식으로 변경
-  1. 변경과 동시에 저장하고 있던 TreeNode 포인터를 통해 TreeNode의 Value의 값도 변경
+  - 변경과 동시에 저장하고 있던 TreeNode 포인터를 통해 TreeNode의 Value의 값도 변경
 5. 결과값 출력
