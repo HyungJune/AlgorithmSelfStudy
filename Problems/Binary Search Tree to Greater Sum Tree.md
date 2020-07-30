@@ -22,218 +22,123 @@ Given the root of a binary search tree with distinct values, modify it so that e
 
 * * *
 ### Solution
-아직 미완성...
 ```go
-/**
- * Definition for a binary tree node.
- * type TreeNode struct {
- *     Val int
- *     Left *TreeNode
- *     Right *TreeNode
- * }
- */
-```
-```go
-package main
-
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
+type BSTreeNode struct {
+	Val  int
+	Node *TreeNode
 }
 
-type stack struct {
+type BSTree struct {
+	nodes []*BSTreeNode
+}
+
+func bstToGst(root *TreeNode) *TreeNode {
+
+	var bsTree *BSTree
+	var s *Stack
+	bsTree = &BSTree{}
+	s = &Stack{}
+
+	BFSsearch(root, s, bsTree)
+
+    sort.Slice(bsTree.nodes, func(i, j int) bool {
+		return bsTree.nodes[i].Val < bsTree.nodes[j].Val
+	})
+	//quicksort(bsTree.nodes)
+
+	FactorialAndResetValue(bsTree)
+
+	return root
+}
+
+// func quicksort(nodes []*BSTreeNode) []*BSTreeNode {
+// 	if len(nodes) < 2 {
+// 		return nodes
+// 	}
+
+// 	left, right := 0, len(nodes)-1
+
+// 	pivot := rand.Int() % len(nodes)
+
+// 	nodes[pivot], nodes[right] = nodes[right], nodes[pivot]
+
+// 	for i, _ := range nodes {
+// 		if nodes[i].Val < nodes[right].Val {
+// 			nodes[left], nodes[i] = nodes[i], nodes[left]
+// 			left++
+// 		}
+// 	}
+
+// 	nodes[left], nodes[right] = nodes[right], nodes[left]
+
+// 	quicksort(nodes[:left])
+// 	quicksort(nodes[left+1:])
+
+// 	return nodes
+// }
+
+func FactorialAndResetValue(bsTree *BSTree) {
+	i := len(bsTree.nodes) - 1
+	for {
+		if i == 0 {
+			return
+		}
+		bsTree.nodes[i-1].Val += bsTree.nodes[i].Val
+		bsTree.nodes[i-1].Node.Val = bsTree.nodes[i-1].Val
+		i--
+	}
+}
+
+func BFSsearch(root *TreeNode, s *Stack, bsTree *BSTree) *TreeNode {
+	if root == nil {
+		return nil
+	}
+
+	bsTree.nodes = append(bsTree.nodes, &BSTreeNode{
+		Val:  root.Val,
+		Node: root,
+	})
+
+	if root.Left != nil {
+		s.Push(root.Left)
+	}
+	if root.Right != nil {
+		s.Push(root.Right)
+	}
+
+	return BFSsearch(s.Pop(), s, bsTree)
+}
+
+
+type Stack struct {
 	arr   []*TreeNode
 	count int
 }
 
-func (s *stack) Push(node *TreeNode) {
+func (s *Stack) Push(node *TreeNode) {
 	s.arr = append(s.arr[:s.count], node)
 	s.count++
 }
 
-func (s *stack) Pop() *TreeNode {
+func (s *Stack) Pop() *TreeNode {
 	if s.count == 0 {
 		return nil
 	}
 	s.count--
 	return s.arr[s.count]
 }
-
-func (s *stack) isEmpty() bool {
-	if s.count == 0 {
-		return true
-	}
-	return false
-}
-
-func main() {
-}
-func bstToGst(root *TreeNode) *TreeNode {
-
-	return root
-}
-
-func search(root *TreeNode, s *stack) *TreeNode {
-	var node *TreeNode
-	if root == nil {
-		return root
-	}
-
-	node = root.Right
-
-	for {
-		// if node == nil {
-		// 	return s.Pop()
-		// }
-
-		if node.Right != nil {
-			s.Push(node)
-			search(node.Right, s)
-		} else {
-			return s.Pop()
-		}
-
-		node.Val += node.Right.Val
-
-		if node.Left != nil {
-
-		}
-	}
-
-	return root
-}
-
-func search2(root *TreeNode, s *stack) *TreeNode {
-	if root.Right != nil {
-		s.Push(root)
-		search2(root.Right, s)
-	}
-	triangle(root)
-	if root.Left != nil {
-		s.Push(root)
-		search2(root.Left, s)
-	}
-
-	var tmp *TreeNode
-	tmp = s.Pop()
-	if tmp.Left == root {
-		root.Val += tmp.Val
-	}
-	return s.Pop()
-}
-
-func triangle(node *TreeNode) {
-	if node.Right != nil {
-		node.Val += node.Right.Val
-	}
-	// if node.Left != nil {
-	// 	node.Left.Val = node.Val + node.Left.Val
-	// }
-}
-
-/*
-func genBSTArr(root *TreeNode) []int {
-	var bstArr []int
-	var depthQueue *queue
-	bstArr = make([]int, 0)
-	depthQueue = &queue{}
-	depthQueue.initialize(0)
-
-	var tmp *TreeNode
-	index := 0
-	depth := 1
-
-	depthQueue.Push(root)
-
-	for {
-		for i := 0; i < 2^depth;
-		tmp = depthQueue.Pop().(*TreeNode)
-		if tmp == nil {
-
-		} else {
-			bstArr[index] = tmp.Val
-			index++
-
-			if tmp.Left != nil {
-				depthQueue.Push(tmp.Left)
-			} else {
-				depthQueue.Push(nil)
-			}
-			if tmp.Right != nil {
-				depthQueue.Push(tmp.Right)
-			} else {
-				depthQueue.Push(nil)
-			}
-		}
-		depth++
-	}
-
-	return bstArr
-}
-*/
-
-type queue struct {
-	front int
-	rear  int
-	size  int
-	arr   []interface{}
-}
-
-func (q *queue) doublingSlice() {
-	var doubledSlice []interface{}
-	doubledSlice = make([]interface{}, len(q.arr), cap(q.arr)*2)
-	copy(doubledSlice, q.arr)
-	q.arr = doubledSlice
-	q.size = cap(q.arr)
-}
-
-func (q *queue) initialize(args interface{}) {
-	const DEFAULT_SIZE = 10
-
-	switch args.(type) {
-	case int:
-		if args.(int) == 0 {
-			q.size = DEFAULT_SIZE
-		} else {
-			q.size = args.(int)
-		}
-	default:
-		q.size = DEFAULT_SIZE
-	}
-	q.arr = make([]interface{}, q.size, q.size)
-	q.front = 0
-	q.rear = 1
-}
-
-func (q *queue) Push(elem interface{}) {
-	if len(q.arr) == cap(q.arr) {
-		q.doublingSlice()
-	}
-	q.arr[q.rear-1] = elem
-	q.rear = (q.rear + 1) % q.size
-}
-
-func (q *queue) Pop() (elem interface{}) {
-	elem = q.arr[q.front]
-	q.front = (q.front + 1) % q.size
-	return elem
-}
-
-func (q *queue) isEmpty() bool {
-	if q.front == q.rear {
-		return true
-	}
-	return false
-}
 ```
 
 ### 접근법
-
-Search()를 통해 우선 트리에서 가장 큰 값을 가지는 노드로 이동.
-그 노드부터 Subtree를 구성. 현재 정의한 Subtree란 노드, 노드.left와 노드.right로 이루어져 있다. 
-
-Search(root *TreeNode) : Input으로 받는 Root로부터 탐색을 시작하는 동작 수행
-modify(root *TreeNode) : 하나의 노드 그리고 left와 right를 가진 3개의 노드 조합을 subtree로 정의하고 해당 subtree 에서 example과 같은 값의 변화를 주는 동작 수행
-
-
+1. 각 Tree노드의 Val 값과 그 노드의 주소를 저장하는 BSTreeNode 정의 
+2.Tree의 값을 모두 탐색
+2.1 BFS 방식으로 탐색
+2.2 탐색을 하며 현재 Tree의 값을 통해 BSTree를 구성
+2.3 BSTree는 배열로 구현
+3. BSTree의 노드들을 Sorting
+3.1 BSTree에는 모든 TreeNode의 정보가 저장되어있는 상태.
+3.2 각 BSTreeNode의 값을 기준으로 오름차순으로 Sorting
+3.3 QuickSort 구현을 직접 해봄. 굳이 quicksort를 사용하지 않고 golang 기본 library를 사용해도 동일함(내부적으로 quicksort가 구현되어있음)
+4. BSTree 노드들의 value를 Factorial 방식으로 변경
+4.1 변경과 동시에 저장하고 있던 TreeNode 포인터를 통해 TreeNode의 Value의 값도 변경
+5. 결과값 출력
