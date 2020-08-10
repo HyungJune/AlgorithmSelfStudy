@@ -64,6 +64,41 @@ func mulitply(nums []int, product []int, flag bool) []int {
 	return product
 }
 ```
+```go
+func productExceptSelf(nums []int) []int {
+
+	length := len(nums)
+	output := make( []int, length)
+	for i := 0; i< length; i++ {
+		output[i] = 1
+	}
+    diveNconquer( nums, output, 0)
+	return output
+}
+
+func diveNconquer( nums []int, output []int, core int ) {
+    if len(nums) == 1 {
+        return 
+    }
+    center := len(nums)/2
+    prod := 1
+    for i := 0; i < center; i++ {
+        prod *= nums[i]
+    }
+    for i := center; i < len(nums); i++ {
+        output[i+core] *= prod
+    }
+    prod = 1
+    for i := center; i < len(nums); i++ {
+        prod *= nums[i]
+    }
+    for i := 0; i < center; i++ {
+        output[i+core] *= prod
+    }
+    diveNconquer( nums[:center], output, core)
+    diveNconquer( nums[center:], output, center+core)
+}
+```
 
 ### 접근법
 1. 두개의 배열 선언 및 곱의 값으로 채움(product1, product2)
@@ -72,5 +107,9 @@ func mulitply(nums []int, product []int, flag bool) []int {
 2. Output 배열 생성
 2.1 output[i] = product1[i]*product2[i]
 
+1. DivedAndConquer 전략 시도(메모리O(1)
+1.1 중간값을 찾아 왼쪽 오른쪽 나누어가며 동일한 알고리즘 적용
+1.2 알고리즘
+1.2.1 왼쪽 모든값을 오른쪽에 곱하고 오른쪽 모든 값을 왼쪽에 곱한다
 
 
