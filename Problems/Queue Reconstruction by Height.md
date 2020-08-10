@@ -53,13 +53,9 @@ Output:
 					cnt = 0
 					break
 				} else {
-					fmt.Println("else in")
 					tmp := make([][]int, len(result[j+1:]))
 					copy(tmp, result[j+1:])
-					fmt.Println(result[j+1:])
-					fmt.Println(tmp)
 					result = append(result[:j+1], slice)
-					fmt.Println(result)
 					result = append(result, tmp...)
 					cnt = 0
 					break
