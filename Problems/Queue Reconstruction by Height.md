@@ -44,10 +44,33 @@ func reconstructQueue(people [][]int) [][]int {
 	}
 	return result
 }
-``
+```
+
 - sorting이 중요함
     - h의 오름차순으로 정렬하고, 같은 h에 대해서는 k의 오름차순으로 정렬
 - result는 input(=people) 과 같은 크기로 모든 엘리먼트를 {-1, -1}로 채움
 - people를 for문으로 한바퀴 돌면서 검사를 진행
     - 해당 회차의 요소(=person)의 k를 index로 하여 result 슬라이스의 앞에서부터 검사하면서 scope[0]이 -1이거나 person[0]과 같은 경우에는 index--
     - 반대로 생각하면 result 슬라이스에서 이미 채워진 부분은 person[0]보다 작은 값들이므로 index--가 되지 않아야함(오름차순으로 정렬됐으니까)
+
+## 다른 솔루션
+```
+func reconstructQueue(people [][]int) [][]int {
+    res := [][]int{}
+    sort.Slice(people, func(a, b int) bool {
+        return people[a][0] > people[b][0] || (people[a][0] == people[b][0] && people[a][1] < people[b][1])
+    })
+    for _, v := range people {
+        insert(&res, v[1], v)
+    }
+    return res
+}
+
+func insert(s *[][]int, p int, v []int) {
+    *s = append(*s, []int{})
+    copy((*s)[p+1:], (*s)[p:])
+    (*s)[p] = v
+}
+```
+- 이번에는 h의 내림차순, 키가 같은 경우에는 k에 대한 내림차순
+- 큰것부터 넣으니까, 매번 해당회차의 요소(=v)의 v[1]에다가 넣으면 
