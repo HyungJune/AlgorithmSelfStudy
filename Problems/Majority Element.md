@@ -1,6 +1,6 @@
 #### Majority Element
 #### Writer: Haram Ryu
-#### Refer: LeetCode
+#### Refer: LeetCode#169
 
 ## 문제 설명
 길이 n의 슬라이스가 주어지는데 슬라이스의 엘리먼트 중 하나는 n/2번 이상 반복되고, 이걸, majority element라고 한다. 주어지는 슬라이스에 대해서 majority element를 찾아라.  
