@@ -1,6 +1,6 @@
 #### Queue Reconstruction by Height
 #### Writer: Haram Ryu
-#### Refer: LeetCode
+#### Refer: LeetCode#406
 
 ## 문제 설명
 사람들의 리스트가 있고, 사람들은 두개의 정수의 순서쌍(h, k)로 표현되는데
