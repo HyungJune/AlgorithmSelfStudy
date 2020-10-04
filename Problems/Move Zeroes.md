@@ -1,47 +1,33 @@
-#### Permutations  
+#### Move Zeroes  
 #### Writer: Haram Ryu
 #### Refer: LeetCode#283
 
 ## 문제 설명  
-주어진 배열에 대해 가능한 모든 permutation을 배열의 배열로 출력  
+주어진 배열에 대해 모든 0 원소를 배열 뒤로 보내어라. 단, 0이 아닌 원소들의 순서를 지키면서.  
+
+## 전제조건
+- 배열을 복사하지 않고 해보기
+- 동작의 수를 최대한 줄여서 해보기
 
 ***예시***
 ```
-Input: [1,2,3]
-Output:
-[
-  [1,2,3],
-  [1,3,2],
-  [2,1,3],
-  [2,3,1],
-  [3,1,2],
-  [3,2,1]
-]
+Input: [0,1,0,3,12]
+Output: [1,3,12,0,0]
 ```
 
 
 ## 솔루션
 
 ```
-var ans [][]int
-
-func permute(a []int) [][]int {
-	ans = make([][]int, 0)
-	perm(a, 0)
-	return ans
+func moveZeroes(nums []int)  {
+    lastidx := 0
+    for i, num := range nums {
+        if num != 0 {
+            nums[lastidx], nums[i] = nums[i], nums[lastidx]
+            lastidx++
+        }
+    }
 }
-
-func perm(a []int, i int) {
-	if i == len(a) {
-		ans = append(ans, append(make([]int, 0), a...))
-		return
-	}
-	for j := i; j < len(a); j++ {
-		a[i], a[j] = a[j], a[i]
-		perm(a, i+1)
-		a[i], a[j] = a[j], a[i]
-	}
-}
-
 ```
-
+- for문으로 검사하는 동안, 0이 아닌 원소가 나왔을 때 모두 맨 앞으로 보내면 0은 뒤로 밀리게 되어 있음
+- 그런데 카운터를 하나 둬서 0이 아닌 원소가 몇번째 원소와 바뀌어야하는지를 체크
