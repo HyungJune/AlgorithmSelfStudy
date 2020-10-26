@@ -61,3 +61,5 @@ func printLinkedListInReverse(head ImmutableListNode) {
     }
 }
 ```
+
+- 재귀함수를 통하여 가장 마지막 노드까지 간 뒤 함수를 나오면서 출력하면 됩니다.
