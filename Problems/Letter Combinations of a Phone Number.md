@@ -60,3 +60,7 @@ class Solution {
 	}
 }
 ```
+- The solution uses the recursive function.
+- The function 'singleCharCandidates' returns the candidates which a digit can have.
+- After extracting the most significant digit, the function 'letterCombinations' recursively invokes itself with other digits.
+- the function 'letterCombinations' calcuates all combinations by attaching the result of 'singleCharCandidates' of the most significant digit infront to the output of the itself's invokation with other digits.  
