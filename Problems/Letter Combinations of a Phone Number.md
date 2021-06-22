@@ -21,14 +21,7 @@ class Solution {
 		if(digits.length() == 1) {
 			return singleCharCandidates(candidate);
 		}
-		List<String> combinations = letterCombinations(digits.substring(1));
-		for(String combination : combinations) {
-			List<String> singleResult = singleCharCandidates(candidate);
-			for(String r : singleResult) {
-				result.add(r + combination);
-			}
-		}
-
+		letterCombinations(digits.substring(1)).forEach(c-> singleCharCandidates(candidate).forEach(r -> result.add(r+c)));
 		return result;
     }
     
