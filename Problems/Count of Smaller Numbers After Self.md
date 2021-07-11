@@ -57,7 +57,6 @@ class Solution {
     }
 }
 ```
-- Compare all numbers in the nums array
 - Extract a number in the index 0. We call it as the comparing number.
 - compare it with other numbers in the nums array
 - When comparing the numbers, the count increase if the other numbers are bigger than the comparing number.
@@ -86,3 +85,8 @@ class Solution {
     }
 }
 ```
+- The windowSize is 2 ~ nums.length
+- We compare first element and last element in the window.
+- In the code, the index of the first element is windowIndex and the last element is (windowIndex+windowSize-1)
+- It is the same with when we compare all elements in the nums array by using double loops
+- It has the O(n^2) timecomplexity
