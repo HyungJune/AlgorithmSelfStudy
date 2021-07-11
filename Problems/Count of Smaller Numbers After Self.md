@@ -62,8 +62,7 @@ class Solution {
 - compare it with other numbers in the nums array
 - When comparing the numbers, the count increase if the other numbers are bigger than the comparing number.
 - When adding the count to the result array, the 'countSmaller' function recursively runs it-self with the nums array except the comparing num.
-- The timecomplexity is O(n^2) -> O(n) (The comparing for loop) * O(n) (The number of recursive invokations)
-- 
+- The warst timecomplexity is O(n^2) -> O(n) (The comparing for loop) * O(n) (The number of recursive invokations)
 #### Using slice windows
 ```java
 class Solution {
