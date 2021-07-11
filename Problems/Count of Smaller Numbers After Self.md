@@ -160,3 +160,24 @@ class Solution {
     }
 }
 ```
+- While the nums array is sorted, the function count smallers. 
+- Since the nums array is sorted, original index should be saved. Therefore, Element class is defined.
+- The nums array is replaced with the Element array.
+- The recursive function calls 'countSmallerByMerge(elements, start, mid, result)' and 'countSmallerByMerge(elements, mid+1, end, result)' are invoked untile start >= mid and mid+1 >= end respectively.
+- By the recursive function calls, the elements array is seperated to multiple small partial arrays.
+- The minimum size of the elements partial array for going inside of 'while(left < mid + 1 && right <= end)' is 2
+- The variable 'left' is the first index of the partial array.
+- The variable 'right' is the mid index of the partial array.
+- When the value of the element[left] is bigger than the element[right], 'count' variable and 'right' variable increase and element[right] is sorted by using mergedList.
+- When the value of the element[left] is smaller than the element[right],  the count variable is added to the result with the index of the elements[left], the left variable increase, and the element[left] is sorted by using mergedList.
+- If we sort the elements ascending order, we can expect that if first element in the left part is bigger than all in the right part, then we do not need to compare other elements in the left part with in the right part.
+
+- while loop: 
+```java
+while(left < mid + 1) {
+    result[elements[left].index] += count;
+    mergedList.add(elements[left]);
+    left++;
+}
+```
+- It means that since all elements in the right part are smaller than the left, comparing other elements in the left part with all elements in the right part does not needed in the ascending ordered array. Therefore, add the count to the other left element's value
