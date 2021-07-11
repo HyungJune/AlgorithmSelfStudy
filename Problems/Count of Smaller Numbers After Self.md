@@ -33,7 +33,7 @@ To the right of 1 there is 0 smaller element.
 - -10^4 <= nums[i] <= 10^4
 
 ### Solution
-#### First Naive Solution
+#### Using recursion
 ```java
 class Solution {
     public List<Integer> countSmaller(int[] nums) {
@@ -54,6 +54,36 @@ class Solution {
         countSmaller(Arrays.copyOfRange(nums, 1, nums.length))
       );
       return result;
+    }
+}
+```
+- Compare all numbers in the nums array
+- Extract a number in the index 0. We call it as the comparing number.
+- compare it with other numbers in the nums array
+- When comparing the numbers, the count increase if the other numbers are bigger than the comparing number.
+- When adding the count to the result array, the 'countSmaller' function recursively runs it-self with the nums array except the comparing num.
+- The timecomplexity is O(n^2) -> O(n) (The comparing for loop) * O(n) (The number of recursive invokations)
+- 
+#### Using slice windows
+```java
+class Solution {
+    public List<Integer> countSmaller(int[] nums) {
+        int[] result = new int[nums.length];
+		for(int i = 0; i < result.length; i++ ) {
+			result[i] = 0;
+		}
+		for(int windowSize = 2;windowSize<=nums.length;windowSize++){
+			for(int windowIndex = 0; windowIndex-1 + windowSize < nums.length; windowIndex++) {
+				if(nums[windowIndex] > nums[windowIndex+windowSize-1]) result[windowIndex]++;
+			}
+		}
+
+		List<Integer> resultList = new ArrayList<>();
+		for(int i = 0;i< result.length;i++) {
+			resultList.add(result[i]);
+		}
+
+		return resultList;
     }
 }
 ```
