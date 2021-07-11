@@ -90,3 +90,73 @@ class Solution {
 - In the code, the index of the first element is windowIndex and the last element is (windowIndex+windowSize-1)
 - It is the same with when we compare all elements in the nums array by using double loops
 - It has the O(n^2) timecomplexity
+
+#### Using Merged Array (Merge Sort)
+```java
+class Solution {
+    public List<Integer> countSmaller(int[] nums) {
+        if(nums == null || nums.length == 0) {
+            return List.of();
+        }
+        int n = nums.length;
+        Element[] elements = new Element[n];
+        for(int i = 0; i < n ;i++) {
+            elements[i] = new Element(i, nums[i]);
+        }
+        
+        int[] result = new int[n];
+        countSmallerByMerge(elements, 0, n-1, result);
+        return Arrays.stream(result).boxed().collect(Collectors.toList());
+    }
+    
+    public void countSmallerByMerge(Element[] elements, int start, int end, int[] result) {
+        if(start >= end) return;
+        int mid = (start + end) / 2;
+        countSmallerByMerge(elements, start, mid, result);
+        countSmallerByMerge(elements, mid+1, end, result);
+        
+        int left = start;
+        int right = mid+1;
+        
+        int count = 0;
+        List<Element> mergedList = new LinkedList<>();
+        
+        while(left < mid + 1 && right <= end) {
+            if(elements[left].value > elements[right].value) {
+                count++;
+                mergedList.add(elements[right]);
+                right++;
+            } else {
+                result[elements[left].index] += count;
+                mergedList.add(elements[left]);
+                left++;
+            }
+        }
+        
+        while(left < mid + 1) {
+            result[elements[left].index] += count;
+            mergedList.add(elements[left]);
+            left++;
+        }
+        
+        while(right <= end) {
+            mergedList.add(elements[right]);
+            right++;
+        }
+        
+        int pos = start;
+        for(Element element : mergedList) {
+            elements[pos] = element;
+            ++pos;
+        }
+    }
+    private class Element {
+        int index;
+        int value;
+        public Element(int index, int value) {
+            this.index = index;
+            this.value = value;
+        }
+    }
+}
+```
