@@ -29,8 +29,8 @@ To the right of 1 there is 0 smaller element.
 </pre>
 
 #### Constraints
-- 0 <= digits.length <= 4
-- digits[i] is a digit in the range ['2', '9'].
+- 1 <= nums.length <= 10^5
+- -10^4 <= nums[i] <= 10^4
 
 ### Solution
 #### First Naive Solution
