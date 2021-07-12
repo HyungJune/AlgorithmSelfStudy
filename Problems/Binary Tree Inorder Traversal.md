@@ -1,6 +1,6 @@
 ### Binary Tree Inorder Traversal.md
 #### Writer: Haram Ryu
-#### Refer: LeetCode (Easy)
+#### Refer: LeetCode#94 (Easy)
 * * *
 ### Problem
 Given the root of a binary tree, return the inorder traversal of its nodes' values.
