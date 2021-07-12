@@ -43,7 +43,7 @@ Given the root of a binary tree, return the inorder traversal of its nodes' valu
 - -100 <= Node.val <= 100
 
 ### Solution
-#### Using recursion
+#### Trivial recursive solution
 ```golang
 /**
  * Definition for a binary tree node.
@@ -72,8 +72,40 @@ func recursive(root *TreeNode, res *[]int) {
     }
 }
 ```
-- Extract a number in the index 0. We call it as the comparing number.
-- compare it with other numbers in the nums array
-- When comparing the numbers, the count increase if the other numbers are bigger than the comparing number.
-- When adding the count to the result array, the 'countSmaller' function recursively runs it-self with the nums array except the comparing num.
-- The warst timecomplexity is O(n^2) -> O(n) (The comparing for loop) * O(n) (The number of recursive invokations)
+- Preorder traversal(전위순회): 루트→왼쪽→오른쪽
+- Postorder traversal(후위순회): 왼쪽→오른쪽→루트
+- Inorder traversal(중위순회): 왼쪽→루트→오른쪽
+- 시간복잡도 O(n), 공간복잡도: O(n)
+#### Iterative solution
+```golang
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func inorderTraversal(root *TreeNode) []int {
+    res := make([]int,0)
+    tmp := make([]*TreeNode,0)
+    
+    for root != nil || len(tmp) != 0 {
+        for root != nil {
+            tmp = append(tmp, root)
+            root = root.Left
+        }
+        root = tmp[len(tmp)-1]
+        res = append(res, tmp[len(tmp)-1].Val)
+        tmp = tmp[0:len(tmp)-1]
+        root = root.Right
+    }
+    return res
+}
+```
+- golang에는 stack이 없으니 slice를 stack처럼 활용
+- 먼저 가장 왼쪽 노드를 찾으며 그 과정에 있는 노드를 tmp 슬라이스에 뒤쪽으로 append
+- tmp 슬라이스 가장 마지막 값을 꺼내서 다시 root에 저장
+- result 슬라이스에 값을 추가
+- root를 Right노드로 넣어 거기서부터 다시 가장 왼쪽 노드를 찾는 중위순회를 반복
+- 시간복잡도 O(n), 공간복잡도 
