@@ -1,4 +1,4 @@
-### Binary Tree Inorder Traversal.md
+### Binary Tree Inorder Traversal
 #### Writer: Haram Ryu
 #### Refer: LeetCode#94 (Easy)
 * * *
