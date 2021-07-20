@@ -8,7 +8,6 @@ Given an array of strings strs, group the anagrams together. You can return the 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
 <b>Example 1</b>
-![image](https://user-images.githubusercontent.com/22101375/125283730-a7169d80-e353-11eb-8a0b-e87b36ab4fdb.png)
 <pre>
 <b>Input</b>: strs = ["eat","tea","tan","ate","nat","bat"]
 <b>Output</b>: [["bat"],["nat","tan"],["ate","eat","tea"]]
