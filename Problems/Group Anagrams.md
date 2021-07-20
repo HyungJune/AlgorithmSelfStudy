@@ -32,7 +32,6 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 - strs[i] consists of lower-case English letters.
 
 ### Solution
-#### Trivial recursive solution
 ```golang
 func groupAnagrams(strs []string) [][]string {
 
