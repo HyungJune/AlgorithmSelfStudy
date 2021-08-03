@@ -25,14 +25,6 @@ Return true if there is a cycle in the linked list. Otherwise, return false.
 <b>Explanation</b>: There is a cycle in the linked list, where the tail connects to the 0th node.
 </pre>
 
-<b>Example 2</b>
-![image](https://user-images.githubusercontent.com/22101375/127859483-5b31772f-a98b-4399-902d-2e957fc08a16.png)
-<pre>
-<b>Input</b>: head = [1,2], pos = 0
-<b>Output</b>: true
-<b>Explanation</b>: There is a cycle in the linked list, where the tail connects to the 0th node.
-</pre>
-
 <b>Example 3</b>
 ![image](https://user-images.githubusercontent.com/22101375/127859556-e21fb538-da7a-494e-b3fd-dfbe30842456.png)
 <pre>
