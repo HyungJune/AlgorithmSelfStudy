@@ -11,155 +11,67 @@ Given an array nums of n integers, return an array of all the unique quadruplets
 
 You may return the answer in any order.
 
-#### Note
-3개의 쌍은 순서와 상관없이 다른 쌍들과 중복되어서는 안됩니다.
-(예를 들면, (0,1,-1)과 (1,0,-1)은 중복입니다.)
-
-<b>Example</b>
+<b>Example 1:</b>
 <pre>
-Given array nums = [-1,0,1,2,-1,-4],
-
-A solution set is:
-[
-  [-1,0,1],
-  [-1,-1,2],
-]
+<b>Input</b>: nums = [1,0,-1,0,-2,2], target = 0
+<b>Output</b>: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
 </pre>
+
+<b>Example 2:</b>
+<pre>
+<b>Input</b>: nums = [2,2,2,2,2], target = 8
+<b>Output</b>: [[2,2,2,2]]
+</pre>
+
+#### Constraints
+- 1 <= nums.length <= 200
+- -109 <= nums[i] <= 109
+- -109 <= target <= 109
 * * *
 ### Solution
-#### Brute-Force 방식
-```go
-func threeSum(nums []int) [][]int {
-  result := [][]int{}
-
-  checkDuplicate := func(r []int, s []int) bool {
-    sort.Sort(sort.IntSlice(r))
-    sort.Sort(sort.IntSlice(s))
-    for i := 0; i < len(r); i++ {
-      if r[i] != s[i] {
-        return false
-      }
-    }
-    return true
-  }
-    for i:=0;i<len(nums);i++ {
-        for j:=i+1;j<len(nums);j++{
-            for k:=j+1;k<len(nums);k++{
-                if i == k || j == k {
-                    continue
-                }
-                if nums[i] + nums[j] + nums[k] == 0 {
-                    local := []int{}
-                    local = append(local, nums[i])
-                    local = append(local, nums[j])
-                    local = append(local, nums[k])
-                    
-                    for _, r := range result {
-                        if checkDuplicate(r, local) == true {
-                            goto LABEL        
-                        }
-                    } 
-                    
-                    result = append(result, local)
-                    
-                }
-                LABEL:
-            }
-        }
-    }
-    
-    return result
-}
-```
-- 모든 경우의 수를 다 찾는 방식입니다.
-- 중간 중간에 중복인 Case를 검열하는 방식입니다.
-- Time Limit Exceeded가 발생하는 해결법입니다.
-
 #### Two Point 방식
-```go
-func threeSum(nums []int) [][]int {
-if len(nums) < 3 {
-		return nil
+```java
+class Solution {
+    public List<List<Integer>> fourSum(int[] nums, int target) {
+		Arrays.sort(nums);
+		return kSum(nums, target, 0, 4);
 	}
-	result := [][]int{}
 
-	sort.Sort(sort.IntSlice(nums))
-
-	var i int = 0
-	for {
-		if i >= len(nums)-2 {
-			break
-		}
-		var lo int = i + 1
-		var hi int = len(nums) - 1
-		for {
-			if lo >= hi {
-				break
-			}
-			sum := nums[i] + nums[lo] + nums[hi]
-			if sum == 0 {
-				local := []int{}
-				local = append(local, nums[i])
-				local = append(local, nums[lo])
-				local = append(local, nums[hi])
-				result = append(result, local)
-				//increase lo
-				for {
-					if lo <= len(nums)-2 && nums[lo] == nums[lo+1] {
-						lo++
-					} else {
-						lo++
-						break
+	public List<List<Integer>> kSum(int[] nums, int target, int start, int k) {
+		List<List<Integer>> result = new ArrayList<>();
+		if(start == nums.length || nums[start] * k > target || target > nums[nums.length-1] * k)
+			return result;
+		if(k==2)
+			return twoSum(nums, target, start);
+		else
+			for(int i = start; i<nums.length;i++)
+				if( i==start || nums[i] != nums[i-1])
+					for(List<Integer> subset : kSum(nums, target-nums[i],i+1, k-1)){
+						result.add(new ArrayList<>(Arrays.asList(nums[i])));
+						result.get(result.size()-1).addAll(subset);
 					}
-				}
-				//decrease hi
-				for {
-					if hi-1 >= 0 && nums[hi] == nums[hi-1] {
-						hi--
-					} else {
-						hi--
-						break
-					}
-				}
-			} else if sum < 0 {
-				//increase lo
-				for {
-					if lo <= len(nums)-2 && nums[lo] == nums[lo+1] {
-						lo++
-					} else {
-						lo++
-						break
-					}
-				}
-			} else if sum > 0 {
-				//decrease hi
-				for {
-					if hi-1 >= 0 && nums[hi] == nums[hi-1] {
-						hi--
-					} else {
-						hi--
-						break
-					}
-				}
-			}
-		}
-		//increase i
-		for {
-			if i <= len(nums)-2 && nums[i] == nums[i+1] {
-				i++
-			} else {
-				i++
-				break
-			}
-		}
+        return result;
 	}
-	return result
+
+	public List<List<Integer>> twoSum(int[] nums, int target, int start) {
+		List<List<Integer>> result = new ArrayList<>();
+		int lo = start;
+		int hi = nums.length-1;
+		while(lo < hi) {
+			int sum = nums[lo] + nums[hi];
+			if(sum < target || lo > start && nums[lo] == nums[lo-1]) lo++;
+			else if(sum > target || hi < nums.length-1 && nums[hi] == nums[hi+1]) hi--;
+			else {
+				result.add(Arrays.asList(nums[lo++], nums[hi--]));
+			}
+		}
+		return result;
+	}
 }
 ```
-- nums를 순회하면서(i) low (i+1) / high (nums의 갯수 - 1)를 둬서 비교하는 방식
-- 중복을 방지하기 위해서는 nums가 정렬된 상태여야 함. 이때 정렬 알고리즘은 O(n^2)의 복잡성보다 작거나 같기 때문에 전체 알고리즘의 시간 복잡도에는 영향을 주지 않습니다.
-- 여기서 고민이였던 부분은 언제 low가 증가되고 high가 감소되야 하는냐인데, nums가 정렬된 상태라면, nums[i] + nums[low] + nums[high] 값이 0보다 작을 경우에는 지금보다 더 큰 값을 더해야하므로 low를 증가시켜야 하며, 0보다 작을 경우에는 지금보다 더 작은 값을 더해야하므로 high를 감소시켜야 합니다.
-- sum이 0일 경우에는 low와 high 값을 둘다 증가/감소시켜야 합니다. (한쪽만 증가/감소 시킬 경우 절대로 0을 만족시킬 수 없음)
-- i, low, high 값을 증가/감소 시킬때에는 항상 중복여부를 확인하여 중복된 경우는 넘어가게 구현이 되어야 합니다.
+- It is first to sort the input array.
+- We should implement kSum function (k = 4 in this problem)
+- The minimum value of k is 2. In that case, it is twoSum.
+- kSum function picks a value from left (smallest) to right (biggest). Afterthat, gets the subset from (k-1)Sum with the substracted target value by the picked value. The answsers are the lists containing the picked values and the subsets.
 
 
